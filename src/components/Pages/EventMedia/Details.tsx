@@ -1,5 +1,5 @@
 "use client"
-import { subType } from '@/app/event-media-exhabition-workshop/page'
+import { subType } from '@/app/(main)/event-media-exhabition-workshop/page'
 import Image from 'next/image';
 import Video from 'next-video';
 import React from 'react'
@@ -22,12 +22,12 @@ function Details({ matchedData }: { matchedData: subType }) {
         })}
       </div>
 
-      <div className='flex flex-row flex-wrap gap-5'>
+      <div className='flex flex-row flex-wrap gap-5 justify-center w-full'>
         {matchedData?.arts?.map(art => {
           return <MotionImg
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1, transition: { duration: 0.4, delay: 0.15 * art?.id } }}
-            key={art?.id} alt='art image' src={art?.img} placeholder='blur' className='h-60 w-auto max-w-lg' />
+            key={art?.id} alt='art image' src={art?.img} placeholder='blur' className='w-full h-auto' />
         })}
       </div>
 

@@ -1,28 +1,30 @@
 import React from 'react'
-import s1_1 from "../../../public/arts/serries1/img1.jpg"
-import s1_2 from "../../../public/arts/serries1/img2.jpeg"
-import s1_3 from "../../../public/arts/serries1/img3.jpeg"
-import s1_4 from "../../../public/arts/serries1/img4.jpeg"
-import s1_5 from "../../../public/arts/serries1/img5.jpeg"
+// import s1_1 from "../../../../public/arts/serries1/img1.jpeg"
+import s1_2 from "../../../../public/arts/serries1/img2.jpeg"
+import s1_3 from "../../../../public/arts/serries1/img3.jpeg"
+import s1_4 from "../../../../public/arts/serries1/img4.jpeg"
+import s1_5 from "../../../../public/arts/serries1/img5.jpeg"
 
-import media2_1 from "../../../public/media/necat forging ahead episode 7 staff.jpeg"
-import media2_3 from "../../../public/media/necat forging ahead episode 7 julia tong and painting.jpeg"
-import media2_2 from "../../../public/media/necat forging ahead episode 7 julia tong_ israel garcia_ asia pyron_ jami anderson_ and painting of kristoff.jpg"
+import media2_1 from "../../../../public/media/necat forging ahead episode 7 staff.jpeg"
+import media2_3 from "../../../../public/media/necat forging ahead episode 7 julia tong and painting.jpeg"
+import media2_2 from "../../../../public/media/necat forging ahead episode 7 julia tong_ israel garcia_ asia pyron_ jami anderson_ and painting of kristoff.jpg"
 
-import media3_1 from "../../../public/media/Coop gallery_Julia Tong_this fairy is allergic to the sun.jpg"
-import media3_2 from "../../../public/media/necat forging ahead episode 7 staff.jpeg"
-import media3_3 from "../../../public/media/international artists exhibition 2024_metro arts centennial arts center_julia tong.jpg"
+import media3_1 from "../../../../public/media/Coop gallery_Julia Tong_this fairy is allergic to the sun.jpg"
+import media3_2 from "../../../../public/media/necat forging ahead episode 7 staff.jpeg"
+import media3_3 from "../../../../public/media/international artists exhibition 2024_metro arts centennial arts center_julia tong.jpg"
 
 
-import media4_1 from "../../../public/media/The White Snake_The Meeting_Julia Tong.png"
-import media4_2 from "../../../public/media/The White Snake_The Longing_Julia Tong.png"
-import media4_3 from "../../../public/media/The White Snake_The Fight_Julia Tong.png"
-import media4_4 from "../../../public/media/Silent treatment 1_julia tong.jpg"
-import media4_5 from "../../../public/media/silent treatment 2_Julia Tong.jpg"
+import media4_1 from "../../../../public/media/The White Snake_The Meeting_Julia Tong.png"
+import media4_2 from "../../../../public/media/The White Snake_The Longing_Julia Tong.png"
+import media4_3 from "../../../../public/media/The White Snake_The Fight_Julia Tong.png"
+import media4_4 from "../../../../public/media/Silent treatment 1_julia tong.jpg"
+import media4_5 from "../../../../public/media/silent treatment 2_Julia Tong.jpg"
 
-import media5_1 from "../../../public/arts/serries5/img6.jpeg"
+import media5_1 from "../../../../public/arts/serries5/img6.jpeg"
 import EventMedia from '@/components/Pages/EventMedia/EventMedia'
 import { StaticImageData } from 'next/image'
+
+import media2 from "../../../../public/media/media-2.png"
 
 export type subType = {
     id: number,
@@ -56,10 +58,10 @@ export const data: Roottype[] = [
                 timeLine: "September 5-September 14, 2025",
                 details: ["During the 2025 Nashville Fair, I had the opportunity to serve as the performing artist, creating plein air paintings of animals for one hour each day. Each session resulted in a completed 18” x 24” artwork. As an animal lover, this experience was profoundly fulfilling — not only did I study the anatomy and presence of the animals, but I also learned about their lifestyles and care from their breeders. Many of these animals were show animals, cherished as the pride and joy of their owners.", "Equally meaningful was the chance to share this process with others. I taught many children and adults how to paint, guiding them in plein air techniques and helping them capture the character of animals. Seeing their excitement and curiosity lit up my heart and affirmed my belief in the importance of art education as part of community life."],
                 arts: [
-                    {
-                        id: 1,
-                        img: s1_1
-                    },
+                    // {
+                    //     id: 1,
+                    //     img: s1_1
+                    // },
                     {
                         id: 2,
                         img: s1_2
@@ -155,7 +157,7 @@ export const data: Roottype[] = [
                 arts: [
                     {
                         id: 1,
-                        img: media3_2,
+                        img: media2,
                     },
                 ],
                 video: "/media/soho house artist showcase.mov"
@@ -190,18 +192,18 @@ export const data: Roottype[] = [
                 timeLine: "January 28, 2025.",
                 details: ["To respect member privacy, no photographs of the workshop are shared here; however, the digital art prints and an artwork I created with Chinese paper cutting are featured. During this workshop, I introduced the classic Chinese love folklore of the White Snake, exploring its themes of women’s empowerment, traditional transgender culture, love through the lens of Chinese society, and Buddhism’s tension with folk traditions. I also taught attendees the art of Chinese paper cutting, sharing a technique I developed to break bad habits and create new patterns symbolically. Participants cut their designs, glued them onto paper, painted a habit they wished to release, and then gently peeled the paper, leaving behind a unique artwork that embodied transformation. To deepen the experience, I performed a traditional Chinese tea ceremony, creating space for cultural, linguistic, and historical connections with attendees."],
                 arts: [
-                    {
-                        id: 1,
-                        img: media4_1,
-                    },
-                    {
-                        id: 2,
-                        img: media4_2,
-                    },
-                    {
-                        id: 3,
-                        img: media4_3,
-                    },
+                    // {
+                    //     id: 1,
+                    //     img: media4_1,
+                    // },
+                    // {
+                    //     id: 2,
+                    //     img: media4_2,
+                    // },
+                    // {
+                    //     id: 3,
+                    //     img: media4_3,
+                    // },
                     {
                         id: 4,
                         img: media4_4,

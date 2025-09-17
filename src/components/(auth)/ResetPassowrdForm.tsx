@@ -1,0 +1,69 @@
+"use client";
+
+import type { FormProps } from "antd";
+import { Button, Form, Input } from "antd"
+
+type FieldType = {
+     password?: string;
+     reSetPassword?: string;
+};
+
+const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (errorInfo) => {
+     console.log("Failed:", errorInfo);
+};
+
+const ResetPassowrdForm = () => {
+
+     const onFinish: FormProps<FieldType>["onFinish"] = async (values) => {
+          console.log(values);
+     };
+
+     return (
+          <Form
+               name="basic"
+               initialValues={{ remember: true }}
+               onFinish={onFinish}
+               onFinishFailed={onFinishFailed}
+               autoComplete="off"
+               layout="vertical">
+               <Form.Item<FieldType>
+                    name="password"
+                    rules={[
+                         { required: true, message: "Please your set password!" },
+                    ]}>
+                    <Input.Password
+                         size="large"
+                         placeholder="Set your password"
+                    />
+               </Form.Item>
+
+               <Form.Item<FieldType>
+                    // name=""
+                    rules={[
+                         {
+                              required: true,
+                              message: "Please input your password!",
+                         },
+                    ]}>
+                    <Input.Password
+                         size="large"
+                         placeholder="Re-enter password"
+                    />
+               </Form.Item>
+
+               <Button
+                    htmlType="submit"
+                    size="large"
+                    style={{
+                         backgroundColor: "#CD0335",
+                         color: "#FFFFFF",
+                         width: "100%",
+                         border: "none",
+                    }}>
+                    Sign In
+               </Button>
+          </Form>
+     );
+};
+
+export default ResetPassowrdForm;

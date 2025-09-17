@@ -26,9 +26,9 @@ function Footer() {
                                 initial={{ y: "100%" }}
                                 whileInView={{ y: 0, transition: { duration: 0.4 } }}
                                 viewport={{ once: true }}
-                            >Have a vision on </motion.h2>
+                            >Contact Me</motion.h2>
                         </div>
-                        <div className='overflow-hidden whitespace-nowrap'>
+                        {/* <div className='overflow-hidden whitespace-nowrap'>
                             <motion.h2
                                 initial={{ y: "100%" }}
                                 viewport={{ once: true }}
@@ -41,7 +41,7 @@ function Footer() {
                                 viewport={{ once: true }}
                                 whileInView={{ y: 0, transition: { duration: 0.4, delay: 0.2 } }}
                             >to life!</motion.h2>
-                        </div>
+                        </div> */}
 
                     </h6>
 

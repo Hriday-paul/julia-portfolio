@@ -34,7 +34,7 @@ function Navbar() {
               
                 <div className='flex flex-row justify-between lg:justify-end gap-x-5 items-center w-full lg:w-auto'>
 
-                    <Link href={"/contact"} className="group relative h-9 overflow-hidden overflow-x-hidden rounded-full bg-white px-4 py-2 text-black hover:text-white transition-all duration-500 font-poppins">
+                    {/* <Link href={"/contact"} className="group relative h-9 overflow-hidden overflow-x-hidden rounded-full bg-white px-4 py-2 text-black hover:text-white transition-all duration-500 font-poppins">
                         <span className="relative z-10 text-sm flex flex-row gap-x-1 items-center">
                             Start project
                             <GoArrowUpRight className='size-5' />
@@ -42,7 +42,7 @@ function Navbar() {
                         <span className="absolute inset-0 overflow-hidden rounded-md">
                             <span className="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-primary transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>
                         </span>
-                    </Link>
+                    </Link> */}
 
                     <NavSheet />
 

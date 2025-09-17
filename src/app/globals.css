@@ -8,3 +8,26 @@
 .container {
   @apply max-w-7xl mx-auto px-4 md:px-6;
 }
+
+:root {
+  /* --background: #151515; */
+  /* --foreground: #151515; */
+  --color-main: #F0118B;
+  --color-secondary: #151515;
+  --color-main-bg: #2e2e2e;
+  --color-section-bg: #151515;
+  --color-menu-item: #fff;
+  --color-text-color: #fff;
+  --color-primary-green: #4c00ff;
+  --color-primary-red: #b84d4d;
+  --color-primary-gray: #323232;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+
+

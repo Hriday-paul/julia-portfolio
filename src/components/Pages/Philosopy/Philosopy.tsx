@@ -75,7 +75,7 @@ function Philosopy() {
                 initial={{ y: 20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1, transition: { duration: 0.4 } }}
                 viewport={{ once: true }}
-                className='text-[#36B37E] text-center font-sans text-base'>Philosophy & Background</motion.p>
+                className='text-white text-center font-sans text-base'>Philosophy & Background</motion.p>
 
             {/* ------------------for medum device------------- */}
             <h6 className='text-white font-instrument font-semibold text-4xl lg:text-5xl space-y-2 text-center py-5 hidden md:block'>
@@ -131,7 +131,7 @@ function Philosopy() {
                         viewport={{ once: true }}
                         className='grid grid-cols-1 lg:grid-cols-2 gap-8 '>
                         <div className={`space-y-5 lg:space-y-8 ${isEven ? "lg:order-2" : "lg:order-1"}`}>
-                            <h3 className='text-4xl font-medium text-primary font-playfair'>{i?.title}</h3>
+                            <h3 className='text-4xl font-medium text-primary font-sans'>{i?.title}</h3>
                             <div className='space-y-8'>
                                 {
                                     i?.details?.map((details, ind) => {

@@ -1,5 +1,5 @@
 "use client"
-import { data } from '@/app/event-media-exhabition-workshop/page'
+import { data } from '@/app/(main)/event-media-exhabition-workshop/page'
 import React from 'react'
 import { motion } from "motion/react"
 import Image from 'next/image'

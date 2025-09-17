@@ -41,7 +41,7 @@ function NavSheet() {
                         <SheetTitle></SheetTitle>
                         <SheetDescription />
 
-                        <div className='container min-h-screen overflow-y-auto flex flex-col w-full justify-center items-center space-y-10 sm:space-y-20'>
+                        <div className='container min-h-screen overflow-y-auto flex flex-col w-full justify-center items-center space-y-10 sm:space-y-16'>
 
                             <motion.div
                                 initial={{
@@ -69,7 +69,7 @@ function NavSheet() {
                                     </button>
                                 </SheetClose>
 
-                                <Link href={"/contact"} className="group relative h-12 overflow-hidden overflow-x-hidden rounded-full border border-zinc-200 hover:border-white px-8 py-3 text-white hover:text-zinc-950 transition-all duration-500 font-poppins hidden lg:block">
+                                {/* <Link href={"/contact"} className="group relative h-12 overflow-hidden overflow-x-hidden rounded-full border border-zinc-200 hover:border-white px-8 py-3 text-white hover:text-zinc-950 transition-all duration-500 font-poppins hidden lg:block">
                                     <span className="relative z-10 text-sm flex flex-row gap-x-1 items-center">
                                         Start project
                                         <GoArrowUpRight className='size-5' />
@@ -77,7 +77,7 @@ function NavSheet() {
                                     <span className="absolute inset-0 overflow-hidden rounded-md">
                                         <span className="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-white transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>
                                     </span>
-                                </Link>
+                                </Link> */}
 
                             </motion.div>
 

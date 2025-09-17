@@ -9,6 +9,7 @@ import Footer from "@/components/Shared/Footer";
 import ScrollToTop from "@/components/Shared/ScrollToTop";
 import NextJsTopLoader from "@/components/Shared/NextJsTopLoader";
 import SmoothScroll from "@/components/Shared/SmothScroll";
+import ReduxStoreProvider from "@/utils/ReduxStoreProvider";
 
 const engula = localFont({
   src: "../../fonts/Engula_ExtraBlack.ttf",
@@ -65,12 +66,9 @@ export default function RootLayout({
       >
         <NextJsTopLoader />
         <ScrollToTop />
-        <Cursor />
-        {/* <SmoothScroll > */}
-          <Navbar />
+        <ReduxStoreProvider>
           {children}
-          <Footer />
-        {/* </SmoothScroll> */}
+        </ReduxStoreProvider>
       </body>
 
     </html>
