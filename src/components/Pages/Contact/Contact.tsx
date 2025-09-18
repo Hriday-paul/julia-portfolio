@@ -62,7 +62,7 @@ function Contact() {
                                 </div>
                                 <div className='space-y-0.5'>
                                     <h6 className='text-base font-normal text-primary font-poppins'>{contact?.title}</h6>
-                                    <p className='text-zinc-400 font-poppins text-xs'>{contact?.value}</p>
+                                    <p className='text-zinc-300 font-poppins text-xs'>{contact?.value}</p>
                                 </div>
                             </div>
                         })}

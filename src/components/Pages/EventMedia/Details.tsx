@@ -10,7 +10,6 @@ import "yet-another-react-lightbox/styles.css";
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import { useHighLightDetailsQuery } from '@/redux/features/HighLightApi';
-import { toast } from 'react-toastify';
 import { notFound } from 'next/navigation';
 import { blurImg } from '@/lib/utils';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -88,11 +87,11 @@ function Details({ id }: { id: string }) {
             close={() => setOpen(false)}
             slides={matchedData?.images ? matchedData?.images?.map(i => ({ src: i })) : []}
             plugins={[Fullscreen, Zoom]}
-            carousel={{ finite: true, }}
-            render={{
-              buttonPrev: () => null,
-              buttonNext: () => null,
-            }}
+            // carousel={{ finite: true, }}
+            // render={{
+            //   buttonPrev: () => null,
+            //   buttonNext: () => null,
+            // }}
           />
 
         </>}

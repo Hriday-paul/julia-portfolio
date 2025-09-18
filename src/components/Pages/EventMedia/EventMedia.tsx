@@ -64,7 +64,7 @@ function EventMedia() {
                 return <div key={i?.id} className='space-y-5 md:space-y-6 lg:space-y-8'>
 
                     <div className='flex flex-row items-center gap-x-5 relative'>
-                        <p className='uppercase text-sm text-primary font-poppins flex-shrink-0'>{i?.sectionName}</p>
+                        <p className='uppercase text-sm text-primary font-sans flex-shrink-0'>{i?.sectionName}</p>
                         <div className='w-full relative'>
                             <motion.div
                                 initial={{ width: 0 }}
@@ -84,7 +84,7 @@ function EventMedia() {
                         initial={{ x: 30, opacity: 0 }}
                         whileInView={{ x: 0, opacity: 1, transition: { duration: 0.4 } }}
                         viewport={{ once: true }}
-                        className='text-2xl md:text-3xl lg:text-4xl text-white font-instrument font-semibold max-w-md'>{i?.sectionttile}</motion.h2>
+                        className='text-2xl md:text-3xl lg:text-4xl text-white font-sans font-semibold max-w-md'>{i?.sectionttile}</motion.h2>
 
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                         {isLoading ? <>
