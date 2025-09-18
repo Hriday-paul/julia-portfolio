@@ -10,6 +10,12 @@ const HighLightApi = baseApi.injectEndpoints({
             }),
             providesTags: ["highlights"]
         }),
+        highLightDetails: builder.query<IHighLight, { id: string }>({
+            query: ({ id }) => ({
+                url: `/api/highlights/${id}`,
+            }),
+            providesTags: (_, __, { id }) => [{ type: "highlights", id }]
+        }),
         addHighlight: builder.mutation<{ message: string }, any>({
             query: (body) => ({
                 url: `/api/highlights`,
@@ -32,4 +38,4 @@ const HighLightApi = baseApi.injectEndpoints({
 })
 
 
-export const { useAllHighLightQuery, useAddHighlightMutation, useDeleteHighlightMutation } = HighLightApi;
+export const { useAllHighLightQuery, useAddHighlightMutation, useDeleteHighlightMutation, useHighLightDetailsQuery } = HighLightApi;

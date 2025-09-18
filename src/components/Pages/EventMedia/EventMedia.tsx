@@ -1,11 +1,63 @@
 "use client"
-import { data } from '@/app/(main)/event-media-exhabition-workshop/page'
 import React from 'react'
 import { motion } from "motion/react"
 import Image from 'next/image'
 import Link from 'next/link'
+import { useAllHighLightQuery } from '@/redux/features/HighLightApi'
+import { IHighLight } from '@/app/api/highlights/HighLightsModel'
+import { blurImg } from '@/lib/utils'
+import ArtSkeleton from '../ArtGallery/ArtSkeleton'
 
 function EventMedia() {
+
+    const { isLoading, isError, isSuccess, data: highlights } = useAllHighLightQuery();
+
+    const events = (highlights && isSuccess) ? highlights?.filter(i => i?.category == "Events") : [];
+    const media = (highlights && isSuccess) ? highlights?.filter(i => i?.category == "Media") : [];
+    const exhibition = (highlights && isSuccess) ? highlights?.filter(i => i?.category == "Exhibition") : [];
+    const workshop = (highlights && isSuccess) ? highlights?.filter(i => i?.category == "Workshop") : [];
+
+    type Roottype = {
+        id: number,
+        sectionName: string,
+        sectionttile: string,
+        datas: IHighLight[]
+    }
+
+    const data: Roottype[] = [
+        {
+            id: 1,
+            sectionName: "Events",
+            sectionttile: "Stay updated with every event happening here.",
+            datas: events
+        },
+
+        {
+            id: 2,
+            sectionName: "Media",
+            sectionttile: "Stay informed with latest news and media.",
+            datas: media
+        },
+
+        {
+            id: 3,
+            sectionName: "Exhibition",
+            sectionttile: "Discover the latest trends and creativity here.",
+            datas: exhibition
+        },
+
+        {
+            id: 4,
+            sectionName: "Workshop",
+            sectionttile: "Explore fresh ideas and hands-on experiences.",
+            datas: workshop
+        }
+    ];
+
+    if (isError) {
+        return <></>
+    }
+
     return (
         <div className='space-y-16 md:space-y-24 lg::space-y-28 py-12 md:py-16 lg:py-20'>
             {data?.map(i => {
@@ -35,8 +87,11 @@ function EventMedia() {
                         className='text-2xl md:text-3xl lg:text-4xl text-white font-instrument font-semibold max-w-md'>{i?.sectionttile}</motion.h2>
 
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
-                        {i?.datas?.map(cardData => {
-                            return <Card key={cardData?.id} data={cardData} rootId={i?.id} />
+                        {isLoading ? <>
+                            <ArtSkeleton />
+                            <ArtSkeleton />
+                        </> : i?.datas?.map((cardData, indx) => {
+                            return <Card key={cardData?._id} data={cardData} indx={indx} />
                         })}
                     </div>
 
@@ -48,20 +103,20 @@ function EventMedia() {
 
 export default EventMedia
 
-const Card = ({ data, rootId }: { data: any, rootId: number }) => {
+const Card = ({ data, indx }: { data: IHighLight, indx: number }) => {
     return <motion.div
         initial={{ opacity: 0, y: 10 }}
-        whileInView={{ y: 0, opacity: 1, transition: { duration: 0.4, delay: 0.2 * data?.id } }}
+        whileInView={{ y: 0, opacity: 1, transition: { duration: 0.4, delay: 0.2 * indx } }}
         viewport={{ once: true }}
 
         className='bg-white p-4 rounded-xl'>
-        <Image src={data?.arts[0]?.img} alt='image' className='w-full h-60 object-cover rounded-lg' placeholder='blur' />
-        <Link href={`/event-media-exhabition-workshop/${rootId}/${data.id}/${data?.title}`}>
+        {data?.images?.length > 0 && <Image src={data?.images[0]} alt='image' className='w-full h-60 object-cover rounded-lg' placeholder='blur' blurDataURL={blurImg} height={1000} width={1000} />}
+        <Link href={`/event-media-exhabition-workshop/${data?._id}`}>
             <div className='py-5 px-2 space-y-1.5'>
                 <p className='text-zinc-500 text-sm font-poppins'>{data?.timeLine}</p>
                 <h6 className='text-black text-xl font-poppins font-semibold'>{data?.title}</h6>
                 {data?.subtitle && <p className='text-black text-base font-poppins font-normal'>{data?.subtitle}</p>}
-                <p className='text-zinc-500 text-sm font-poppins line-clamp-1'>{data?.details[0]}</p>
+                <p className='text-zinc-500 text-sm font-poppins line-clamp-1'>{data?.description}</p>
                 <p className='text-primary font-poppins font-medium'>
                     Read more...
                 </p>

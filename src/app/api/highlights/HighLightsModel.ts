@@ -7,7 +7,7 @@ export interface IHighLight {
     images: string[],
     description: string,
     timeLine: string,
-    category: string,
+    category: "Events" | "Media" | "Exhibition" | "Workshop",
     videos: string[]
 }
 
@@ -26,8 +26,8 @@ const HighlightSchema: Schema<IHighLight> = new Schema(
         images: { type: [String], required: true },
         description: { type: String, required: true },
         timeLine: { type: String, required: true },
-        category: { type: String, required: true },
-        videos: { type: [String], required: true },
+        category: { type: String, required: true, enum: ["Events", "Media", "Exhibition", "Workshop"] },
+        videos: { type: [String], required: false },
 
     },
     { timestamps: true },
